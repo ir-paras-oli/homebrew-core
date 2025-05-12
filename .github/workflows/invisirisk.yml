@@ -1,0 +1,61 @@
+name: RUBY x InvisiRisk
+
+on:
+  schedule:
+    - cron: '45 2 * * *'  # Runs daily at 8:30 AM Nepal Time
+  workflow_dispatch:
+
+permissions:
+  checks: write
+  contents: write
+  packages: read
+  actions: write
+
+jobs:
+  sync-and-build:
+    runs-on: ubuntu-latest
+    name: Sync fork and Run build
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config user.name "ir-paras-oli"
+          git config user.email "paras.oli@invisirisk.com"
+
+      - name: Add upstream and sync fork
+        run: |
+          git remote add upstream https://Homebrew/homebrew-core.git
+          git fetch upstream
+          git checkout main
+          git merge upstream/main --no-edit
+          git push https://x-access-token:${{ secrets.MY_PAT }}@github.com/ir-paras-oli/homebrew-core master
+
+      - name: Setup PSE
+        uses: invisirisk/pse-action@latest
+        with:
+          api_url: "https://app.invisirisk.com"
+          app_token: ${{ secrets.IR_API_KEY }}
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'  
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run tests
+        run: bundle exec rake test  # or rspec / your test command
+
+      - name: Cleanup PSE
+        if: always()
+        uses: invisirisk/pse-action@latest
+        with:
+          cleanup: "true"
