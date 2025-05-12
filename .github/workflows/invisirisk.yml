@@ -14,7 +14,7 @@ permissions:
 jobs:
   sync-and-build:
     runs-on: ubuntu-latest
-    name: Sync fork and Run build
+    name: Sync fork and optionally Run build
 
     steps:
       - name: Checkout repository
@@ -42,17 +42,21 @@ jobs:
           api_url: "https://app.invisirisk.com"
           app_token: ${{ secrets.IR_API_KEY }}
 
+      # Optional Ruby Setup — only include if the repo contains a Gemfile
       - name: Setup Ruby
+        if: ${{ hashFiles('Gemfile') != '' }}
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'  
+          ruby-version: '3.1'
           bundler-cache: true
 
       - name: Install dependencies
+        if: ${{ hashFiles('Gemfile') != '' }}
         run: bundle install
 
       - name: Run tests
-        run: bundle exec rake test  # or rspec / your test command
+        if: ${{ hashFiles('Gemfile') != '' }}
+        run: bundle exec rake test  # or replace with your actual test command
 
       - name: Cleanup PSE
         if: always()
