@@ -30,7 +30,7 @@ jobs:
 
       - name: Add upstream and sync fork
         run: |
-          git remote add upstream https://Homebrew/homebrew-core.git
+          git remote add upstream https://https://github.com/Homebrew/homebrew-core.git
           git fetch upstream
           git checkout main
           git merge upstream/main --no-edit
