@@ -945,6 +945,7 @@ ejabberd
 ejdb
 eksctl
 elan-init
+eleventy
 elfutils
 elfx86exts
 elixir
@@ -2209,6 +2210,7 @@ lz4
 lzip
 lziprecover
 lzlib
+m4
 m68k-elf-gcc
 macchina
 mackup
@@ -2564,6 +2566,7 @@ oauth2_proxy
 oauth2c
 oauth2l
 objfw
+observerward
 ocaml-findlib
 ocaml-zarith
 ocamlbuild
@@ -2899,6 +2902,7 @@ procps
 procs
 profanity
 proftpd
+prog8
 proj
 projectable
 prometheus
@@ -3097,6 +3101,7 @@ riemann
 riemann-client
 rio
 rip2
+ripgrep-all
 ripsecrets
 riscv64-elf-gcc
 risor
