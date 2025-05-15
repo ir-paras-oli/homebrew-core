@@ -272,6 +272,7 @@ bear
 beautysh
 bed
 bee
+behaviortree.cpp
 bench
 bender
 benthos
@@ -635,6 +636,7 @@ contentful-cli
 convco
 convmv
 convox
+cookcli
 cookiecutter
 copa
 copier
@@ -1690,6 +1692,7 @@ joker
 jolie
 joplin-cli
 jose
+jove
 jp2a
 jpeg-turbo
 jpeg-xl
@@ -2196,6 +2199,7 @@ lucky-commit
 ludusavi
 luit
 lume
+lunar-date
 lune
 lunzip
 lutok
@@ -2412,6 +2416,8 @@ multi-gitter
 multitail
 muon
 muparser
+mupdf
+mupdf-tools
 murex
 musikcube
 mutt
