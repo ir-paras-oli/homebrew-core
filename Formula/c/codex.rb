@@ -1,18 +1,18 @@
 class Codex < Formula
   desc "OpenAI's coding agent that runs in your terminal"
   homepage "https://github.com/openai/codex"
-  url "https://registry.npmjs.org/@openai/codex/-/codex-0.1.2505141022.tgz"
-  sha256 "56548be82188742828bdce9721fe5e046740da9552d8f145404fb44e239e00b7"
+  url "https://registry.npmjs.org/@openai/codex/-/codex-0.1.2505161243.tgz"
+  sha256 "b47ac6af5a516f7685eddd51dfd69df31c03859e7692fbb79716377cd34eeaa1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6179ec361d37813db5c0f668bc5fca20a8dc297b8df056b3c53d5cedc018aba"
-    sha256 cellar: :any_skip_relocation, ventura:       "d6179ec361d37813db5c0f668bc5fca20a8dc297b8df056b3c53d5cedc018aba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "203d9e90dca47491c291d91b29de6dac25aa4a2bc20f3e22ed691631b57d9507"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "203d9e90dca47491c291d91b29de6dac25aa4a2bc20f3e22ed691631b57d9507"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "203d9e90dca47491c291d91b29de6dac25aa4a2bc20f3e22ed691631b57d9507"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d803af8c4ae43bb3c54ebc59517bd2c76a889d241aab9ad81beab98eee098ed6"
+    sha256 cellar: :any_skip_relocation, ventura:       "d803af8c4ae43bb3c54ebc59517bd2c76a889d241aab9ad81beab98eee098ed6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "203d9e90dca47491c291d91b29de6dac25aa4a2bc20f3e22ed691631b57d9507"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "203d9e90dca47491c291d91b29de6dac25aa4a2bc20f3e22ed691631b57d9507"
   end
 
   depends_on "node"
@@ -29,8 +29,7 @@ class Codex < Formula
   end
 
   test do
+    # codex is a TUI application
     assert_match version.to_s, shell_output("#{bin}/codex --version")
-
-    assert_match "Missing openai API key", shell_output("#{bin}/codex brew 2>&1", 1)
   end
 end
