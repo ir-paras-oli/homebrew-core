@@ -227,6 +227,7 @@ baidupcs-go
 balena-cli
 ballerburg
 ballerina
+bamtools
 bandicoot
 bandit
 bandwhich
@@ -1151,6 +1152,7 @@ fox
 fpart
 fping
 fplll
+fpm
 fq
 fred
 freebayes
