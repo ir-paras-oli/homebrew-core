@@ -1146,6 +1146,7 @@ fortio
 fortitude
 fortls
 fossil
+foundry
 fourmolu
 fourstore
 fox
@@ -3072,6 +3073,7 @@ raven
 raxml-ng
 raylib
 rbenv
+rbspy
 rbw
 rclone
 rcs
@@ -3141,6 +3143,7 @@ robin-map
 roblox-ts
 robot-framework
 rocksdb
+rofi
 rogcat
 rojo
 rollup
@@ -3375,6 +3378,7 @@ sngrep
 sniffer
 sniffglue
 sniffnet
+snobol4
 snort
 snowflake
 snowflake-cli
