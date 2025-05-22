@@ -433,6 +433,7 @@ cargo-outdated
 cargo-public-api
 cargo-release
 cargo-run-bin
+cargo-shear
 cargo-shuttle
 cargo-sort
 cargo-spellcheck
@@ -511,6 +512,7 @@ cheat
 check-jsonschema
 checkbashisms
 checkmake
+checkdmarc
 checkov
 checkstyle
 cherrytree
@@ -1052,6 +1054,7 @@ fatal
 faudio
 fauna-shell
 faust
+fava
 favirecon
 fb303
 fblog
@@ -1702,6 +1705,7 @@ joker
 jolie
 joplin-cli
 jose
+joshuto
 jove
 jp2a
 jpeg-turbo
@@ -3440,6 +3444,7 @@ sqlcipher
 sqlcmd
 sqlfluff
 sqlite-utils
+sqlitecpp
 sqlmap
 sqlpage
 sqlparse
@@ -3956,6 +3961,7 @@ wimlib
 winetricks
 wiredtiger
 wireguard-go
+wireguard-tools
 wiremock-standalone
 wireshark
 witness
