@@ -18,6 +18,7 @@ ada-url
 adapterremoval
 adaptivecpp
 adb-enhanced
+addons-linter
 adios2
 adns
 adplug
@@ -196,6 +197,7 @@ aws-crt-cpp
 aws-elasticbeanstalk
 aws-es-proxy
 aws-iam-authenticator
+aws-lc
 aws-nuke
 aws-rotate-key
 aws-sam-cli
@@ -320,6 +322,7 @@ blueutil
 bluez
 bmake
 bnd
+boa
 bob
 bochs
 bold
@@ -1330,6 +1333,7 @@ gmsh
 gnmic
 gnome-autoar
 gnome-builder
+gnome-online-accounts
 gnu-apl
 gnu-chess
 gnu-getopt
@@ -1390,6 +1394,7 @@ goreman
 goresym
 gorilla-cli
 gosec
+goshs
 gossip
 gostatic
 gosu
@@ -1977,6 +1982,7 @@ libgetdata
 libgit2
 libgit2-glib
 libgit2@1.8
+libgoa
 libgpg-error
 libgr
 libgsf
@@ -3037,6 +3043,7 @@ qdmr
 qemu
 qjackctl
 qmmp
+qnm
 qpdf
 qpid-proton
 qrcp
@@ -3365,6 +3372,7 @@ skylighting
 slackcat
 slackdump
 sleef
+sleek
 slepc
 slepc-complex
 sleuthkit
