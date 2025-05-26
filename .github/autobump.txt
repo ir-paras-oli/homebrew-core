@@ -275,6 +275,7 @@ beanquery
 bear
 beautysh
 bed
+bedops
 bee
 behaviortree.cpp
 bench
@@ -1219,6 +1220,7 @@ gaze
 gcalcli
 gcem
 gci
+gcli
 gcovr
 gcr
 gcsfuse
@@ -2366,6 +2368,7 @@ minikube
 minimal-racket
 minimap2
 minio
+minio-mc
 minio-warp
 minipro
 miniserve
@@ -2376,6 +2379,7 @@ minizip
 minizip-ng
 mintoolkit
 minuit2
+mise
 mist-cli
 mk-configure
 mkdocs
@@ -2745,6 +2749,7 @@ overdrive
 overmind
 overtls
 ox
+oxen
 oxipng
 oxker
 oxlint
@@ -3102,6 +3107,7 @@ rdfind
 re-flex
 re2c
 readpe
+readsb
 rebar3
 recc
 recode
@@ -3522,6 +3528,7 @@ strongswan
 structurizr-cli
 sttr
 stunnel
+style-dictionary
 stylelint
 stylish-haskell
 subfinder
