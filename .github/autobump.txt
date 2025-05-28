@@ -1080,6 +1080,7 @@ fend
 fennel
 fern-api
 feroxbuster
+ferron
 fetchmail
 ffmpeg
 ffmpeg@4
@@ -2362,6 +2363,7 @@ mimirtool
 minder
 minica
 minicom
+miniflux
 minigraph
 minijinja-cli
 minikube
@@ -3391,6 +3393,7 @@ slumber
 slurm
 smake
 smartdns
+smenu
 smimesign
 smug
 sn0int
