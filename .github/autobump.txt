@@ -1827,6 +1827,7 @@ ksops
 ktexttemplate
 ktfmt
 ktoblzcheck
+ktop
 ktor
 kty
 kube-bench
@@ -2574,6 +2575,7 @@ notcurses
 noti
 notifiers
 notify
+nova
 nox
 nping
 npm-check-updates
@@ -2911,6 +2913,7 @@ podofo
 podsync
 poetry
 poke
+polaris
 policy_sentry
 policy-engine
 polkit
@@ -3113,6 +3116,7 @@ readpe
 readsb
 rebar3
 recc
+reckoner
 recode
 recoverpy
 redict
