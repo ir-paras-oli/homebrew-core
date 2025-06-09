@@ -946,6 +946,7 @@ earthly
 easeprobe
 easy-rsa
 easyengine
+easyrpg-player
 eccodes
 ecflow-ui
 echidna
@@ -1395,7 +1396,6 @@ gopass
 gopass-jsonapi
 gopeed
 gopls
-goplus
 gor
 goread
 goredo
@@ -2025,6 +2025,7 @@ libjwt
 libkeccak
 libksba
 liblc3
+liblcf
 liblinear
 liblouis
 liblqr
@@ -2352,6 +2353,7 @@ memtester
 menhir
 mercurial
 mergiraf
+mesa
 meson
 meta-package-manager
 metabase
@@ -2377,6 +2379,7 @@ millet
 mimalloc
 mimirtool
 minder
+mingw-w64
 minica
 minicom
 miniflux
@@ -2758,6 +2761,7 @@ ospray
 osslsigncode
 osv-scanner
 otel-cli
+oterm
 otf2
 otree
 ots
@@ -4060,6 +4064,7 @@ xeol
 xerces-c
 xfig
 xgboost
+xgo
 xh
 xinit
 xk6
