@@ -928,6 +928,7 @@ duplicity
 duply
 dust
 dvc
+dvisvgm
 dwarfs
 dwarfutils
 dwm
@@ -3018,6 +3019,7 @@ pueue
 pug
 pugixml
 pulsarctl
+pulumictl
 pumba
 punktf
 pure
@@ -3698,6 +3700,7 @@ tf-summarize
 tfautomv
 tfcmt
 tfel
+tfmcp
 tfmigrate
 tfmv
 tfprovidercheck
