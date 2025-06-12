@@ -1228,6 +1228,7 @@ gauge
 gawk
 gaze
 gcalcli
+gcc@13
 gcem
 gci
 gcli
@@ -1317,6 +1318,7 @@ gitql
 gitsign
 gittuf
 gitu
+gitwatch
 giza
 gjs
 gkrellm
@@ -1914,6 +1916,7 @@ lcm
 lcov
 ld-find-code-refs
 ldc
+ldcli
 ldns
 leaf-proxy
 leakcanary-shark
@@ -2123,6 +2126,7 @@ libtommath
 libtool
 libtorrent-rakshasa
 libtorrent-rasterbar
+libtpms
 libtrace
 libtrng
 libucl
@@ -3647,6 +3651,7 @@ tcpreplay
 tcpsplit
 tcsh
 tdb
+tea
 tealdeer
 tectonic
 teensy_loader_cli
@@ -4144,6 +4149,7 @@ zabbix
 zabbix-cli
 zbctl
 zchunk
+zebra
 zeek
 zellij
 zenith
