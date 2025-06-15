@@ -601,6 +601,8 @@ clp
 clusterawsadm
 clusterctl
 clzip
+cmake
+cmake-docs
 cmake-language-server
 cmake-lint
 cmark
@@ -1381,6 +1383,7 @@ gocloc
 gocryptfs
 goctl
 godap
+goenv
 goffice
 gofumpt
 goimports
