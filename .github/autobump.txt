@@ -816,6 +816,7 @@ dhall-lsp-server
 dhall-toml
 dhall-yaml
 di
+diagram
 dialog
 diamond
 dicebear
@@ -1266,6 +1267,7 @@ gf
 gfold
 ggshield
 gh-ost
+ghalint
 ghcup
 ghex
 ghorg
@@ -2338,6 +2340,7 @@ mbedtls
 mbt
 mcap
 mcfly
+mcp-inspector
 mcpm
 md2pdf
 md4c
@@ -2464,6 +2467,7 @@ mpg123
 mpi4py
 mpich
 mpop
+mpremote
 mprocs
 mpv
 mqttui
@@ -3181,6 +3185,7 @@ restish
 restview
 resvg
 retire
+retry
 reuse
 reveal-md
 revive
