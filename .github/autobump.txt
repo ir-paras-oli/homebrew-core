@@ -126,6 +126,7 @@ arkade
 arm-none-eabi-gcc
 armadillo
 arp-scan
+arp-scan-rs
 arping
 arrayfire
 artillery
@@ -2376,6 +2377,7 @@ memtester
 menhir
 mercurial
 mergiraf
+mermaid-cli
 mesa
 meson
 meta-package-manager
