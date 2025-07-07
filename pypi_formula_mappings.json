@@ -348,7 +348,7 @@
   "flit": {
     "exclude_packages": ["certifi"]
   },
-  "fonttools": "fonttools[woff]",
+  "fonttools": "fonttools[lxml,woff]",
   "forbidden": {
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser"]
   },
