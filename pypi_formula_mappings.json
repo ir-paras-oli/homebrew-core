@@ -86,7 +86,6 @@
     "exclude_packages": ["certifi"]
   },
   "awscli": {
-    "exclude_packages": ["cryptography"],
     "extra_packages": ["flit-core"]
   },
   "awscurl": {
