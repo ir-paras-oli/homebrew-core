@@ -24,7 +24,8 @@ module Homebrew
         response = GitHub::API.open_rest(GitHub.url_to("repos", owner, repo, "pulls", pull_request, "commits"))
 
         response.reject! do |item|
-          UNCHECKED_COMMIT_AUTHORS.include?(item.dig("commit", "author", "name")) ||
+          item.fetch("parents").count > 1 ||
+            UNCHECKED_COMMIT_AUTHORS.include?(item.dig("commit", "author", "name")) ||
             UNCHECKED_COMMIT_AUTHORS.include?(item.dig("commit", "committer", "name"))
         end
 
