@@ -176,10 +176,6 @@ jobs:
           then
             branch="$head_repo_owner/main"
             remote_branch="main"
-          elif [[ "$branch" = "master" ]]
-          then
-            branch="$head_repo_owner/master"
-            remote_branch="master"
           else
             remote_branch="$branch"
           fi
