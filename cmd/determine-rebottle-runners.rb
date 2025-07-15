@@ -47,7 +47,7 @@ module Homebrew
         timeout = args.named.second.to_i
 
         tags = formula.bottle_specification.collector.tags
-        runners = if tags.count == 1 && tags.first.system == :all
+        runners = if tags.one? && tags.first.system == :all
           # Build on all supported macOS versions and Linux.
           [linux_runner_spec(:x86_64, timeout)] + MacOSVersion::SYMBOLS.keys.flat_map do |symbol|
             macos_version = MacOSVersion.from_symbol(symbol)

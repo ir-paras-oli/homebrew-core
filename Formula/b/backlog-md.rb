@@ -1,18 +1,18 @@
 class BacklogMd < Formula
   desc "Markdown‑native Task Manager & Kanban visualizer for any Git repository"
   homepage "https://github.com/MrLesk/Backlog.md"
-  url "https://registry.npmjs.org/backlog.md/-/backlog.md-1.3.0.tgz"
-  sha256 "4cc08d0ec4e464d18f1d02aa33a7fb7a22bf1f56f82aebd47912571a5225fe8e"
+  url "https://registry.npmjs.org/backlog.md/-/backlog.md-1.3.2.tgz"
+  sha256 "5c9a26c55d277e79fe5568ec3db9459ceb07274b893e87a17cddd603f9c5e891"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sequoia: "b0efacb2355b3e80b2543d82fad61d5fd9b8fbcf90dfe16448ca395a8d12ce15"
-    sha256                               arm64_sonoma:  "b0efacb2355b3e80b2543d82fad61d5fd9b8fbcf90dfe16448ca395a8d12ce15"
-    sha256                               arm64_ventura: "b0efacb2355b3e80b2543d82fad61d5fd9b8fbcf90dfe16448ca395a8d12ce15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "881a5bfc942e2ebc58679276b1b72647a3d161b1a9168d8eb00c43a2ad63886f"
-    sha256 cellar: :any_skip_relocation, ventura:       "881a5bfc942e2ebc58679276b1b72647a3d161b1a9168d8eb00c43a2ad63886f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab4e2818b93f1816247bb9842ab10cf8f9672bd0bcbe50ba1a58476b791a260b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e6a90ed0cc652c87b7cf5d6a5aaf294ef0d10ba5435896382a75e3d8f44790d"
+    sha256                               arm64_sequoia: "ca44eb0058580295e4e1cf44aa900436634a47ad190e570b0e098f4bcbb2f868"
+    sha256                               arm64_sonoma:  "ca44eb0058580295e4e1cf44aa900436634a47ad190e570b0e098f4bcbb2f868"
+    sha256                               arm64_ventura: "ca44eb0058580295e4e1cf44aa900436634a47ad190e570b0e098f4bcbb2f868"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df8bf6695062b42411c590cce12d1b283b2fb588b8a46684f6dd22804f62ac99"
+    sha256 cellar: :any_skip_relocation, ventura:       "df8bf6695062b42411c590cce12d1b283b2fb588b8a46684f6dd22804f62ac99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddb707b311c3a4193e0db7678d856f14a9f2afa1edcacdb505084ad7eb1a4e7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02de399501055ac87e26c017b62bdce1974a2fedb3db8ce8f6dad5412849fb48"
   end
 
   depends_on "node"
