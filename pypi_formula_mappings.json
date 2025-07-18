@@ -824,6 +824,9 @@
   "sail": {
     "exclude_packages": ["certifi", "cryptography"]
   },
+  "scdl": {
+    "exclude_packages": ["certifi"]
+  },
   "sceptre": {
     "exclude_packages": ["certifi"]
   },
