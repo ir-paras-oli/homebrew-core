@@ -1,19 +1,19 @@
 class Esbuild < Formula
   desc "Extremely fast JavaScript bundler and minifier"
   homepage "https://esbuild.github.io/"
-  url "https://github.com/evanw/esbuild/archive/refs/tags/v0.25.6.tar.gz"
-  sha256 "21b713a3a0a9febc6fae5988ad288c4684f38c11fa585acd3678ba3ee6891824"
+  url "https://github.com/evanw/esbuild/archive/refs/tags/v0.25.7.tar.gz"
+  sha256 "b972ae207f89a8e60b1972a8db7cc87816fdf56b7a8818c4dd3189041f6956b4"
   license "MIT"
   head "https://github.com/evanw/esbuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2eb78bb1034069fbcbc3b7625e4c91c7f350d1657063463b30e36db9e801066"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2eb78bb1034069fbcbc3b7625e4c91c7f350d1657063463b30e36db9e801066"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2eb78bb1034069fbcbc3b7625e4c91c7f350d1657063463b30e36db9e801066"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c59ac318bd27fb81a92dd7fe1b53a3c5c798591872e51376ce1d97a4a65735db"
-    sha256 cellar: :any_skip_relocation, ventura:       "c59ac318bd27fb81a92dd7fe1b53a3c5c798591872e51376ce1d97a4a65735db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "579c5d97429159cae5e772177446f0fecb896174516ed71c484f4e013292b50a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4db9fa1d0fa161ef3d3cd3d4471243ce939109a239123750a2c40a99964f8af4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "def9c6f3a7a196fc3ccffd8a1c27b5e5fab381da1c565043b02e7abd5129c263"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "def9c6f3a7a196fc3ccffd8a1c27b5e5fab381da1c565043b02e7abd5129c263"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "def9c6f3a7a196fc3ccffd8a1c27b5e5fab381da1c565043b02e7abd5129c263"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2424ffe2b9bcec86e091f8a8acc07d1c49d3d3f6c57eac0b0476c08a3ed019c"
+    sha256 cellar: :any_skip_relocation, ventura:       "d2424ffe2b9bcec86e091f8a8acc07d1c49d3d3f6c57eac0b0476c08a3ed019c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71063506341f68a9825a5611b05820b865680402fb031d85014efd891d6e9e2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "992f20fbd53ce5a56a46d6401c8b9c3a909f4ed3417c418b90306ace05e78b0e"
   end
 
   depends_on "go" => :build
