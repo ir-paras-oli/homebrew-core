@@ -17,6 +17,7 @@ class Hdr10plusTool < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b7c7ff273efa5264c458d146a7a8a063ac0484043332b62dcac2feb63d8c74ce"
     sha256 cellar: :any_skip_relocation, sonoma:        "942613e0a0a9fcc2636d63df7a992f20a61c1060ac127f7d7132daa9012bee17"
     sha256 cellar: :any_skip_relocation, ventura:       "0243742abe39f9b62b887608e8844d2474fbe57645037f36c7143bbccfef3833"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5f68486d96825cbc9d807f2024c53bee11dd984115747be11516602a7545097"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6b11863c103ed0f67eba0ea2aa044bfaad6d95a1cb6dee3e03796ca5f1c60dc"
   end
 

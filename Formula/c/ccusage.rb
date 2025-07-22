@@ -11,6 +11,7 @@ class Ccusage < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "73153c3d7be3c4da26169ff48692dde07e0b35ea569660f8f81b9dd9c48b901f"
     sha256 cellar: :any_skip_relocation, sonoma:        "9ea12ee3d6fb167163e859e7859869a6ab4f46a8e93ddd98a7ffcee9cf40d625"
     sha256 cellar: :any_skip_relocation, ventura:       "9ea12ee3d6fb167163e859e7859869a6ab4f46a8e93ddd98a7ffcee9cf40d625"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73153c3d7be3c4da26169ff48692dde07e0b35ea569660f8f81b9dd9c48b901f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73153c3d7be3c4da26169ff48692dde07e0b35ea569660f8f81b9dd9c48b901f"
   end
 

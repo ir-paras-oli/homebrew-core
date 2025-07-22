@@ -12,13 +12,14 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "255dd187fd6afae2aa9c0104d36dcc60e2a83a4b0a573a79432c0ec4cfc34861"
-    sha256 arm64_sonoma:  "15825b29cbd7bd0a89bc1f706dc6729557743e3e057aee10b0e1f064fd0b069e"
-    sha256 arm64_ventura: "9f17d56d6ba418197c85f721e18db1cc59cb3731930e780be2189e7c962bfc01"
-    sha256 sonoma:        "2f414cefcaad89b21c8d85e2232f2a74093642ded6bb59a691cdd33e16865c3d"
-    sha256 ventura:       "0a21c671745a463f982186e3fa5ed8d573f7884de50517375b03a137296b498c"
-    sha256 arm64_linux:   "bac860cd0c3db82451010d2a6c35163ad0c52bb445b013ba789dd0879697ef00"
-    sha256 x86_64_linux:  "753cf3de36e15c44c87588fc6aa718f6ba980fc166912db16a739b4b259f568a"
+    rebuild 2
+    sha256 arm64_sequoia: "e3b31f9b31a2b7afa8c9e8f1c8fa4b0136cf9e60b0a4385015486706f8a9286b"
+    sha256 arm64_sonoma:  "9455851df579660bd8f6791105412cfdc4118bbb660fe3513cf6d018ee954e16"
+    sha256 arm64_ventura: "ff09188d924e5419232644b943c2fd9e74748ad2ee39702d64bc356fc7cc97a3"
+    sha256 sonoma:        "d315020d1a5dae78188e19c0c17261c14549e4b61b851fddc34d9a615a0346dc"
+    sha256 ventura:       "0aa07c3b2db7ae979215a0b6ed552bcabf666971240f3d599d9df0755bc38060"
+    sha256 arm64_linux:   "f563cfc7b948a7b6f49f73a469a475bc244e221c01d01e8518d950b2fdd54952"
+    sha256 x86_64_linux:  "066d8195bd40a2cd20f9f1a45b8777e6be0cbdf09a282fd360c53170ddcb2b3c"
   end
 
   depends_on "pkgconf" => :build
@@ -27,8 +28,13 @@ class Node < Formula
   depends_on "c-ares"
   depends_on "icu4c@77"
   depends_on "libnghttp2"
+  depends_on "libnghttp3"
+  depends_on "libngtcp2"
   depends_on "libuv"
   depends_on "openssl@3"
+  depends_on "simdjson"
+  depends_on "sqlite" # Fails with macOS sqlite.
+  depends_on "zstd"
 
   uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
@@ -79,25 +85,68 @@ class Node < Formula
       --prefix=#{prefix}
       --without-npm
       --with-intl=system-icu
-      --shared-libuv
-      --shared-nghttp2
-      --shared-openssl
-      --shared-zlib
       --shared-brotli
       --shared-cares
-      --shared-libuv-includes=#{Formula["libuv"].include}
-      --shared-libuv-libpath=#{Formula["libuv"].lib}
-      --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
-      --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
-      --shared-openssl-includes=#{Formula["openssl@3"].include}
-      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
+      --shared-libuv
+      --shared-nghttp2
+      --shared-nghttp3
+      --shared-ngtcp2
+      --shared-openssl
+      --shared-simdjson
+      --shared-sqlite
+      --shared-zlib
+      --shared-zstd
       --shared-brotli-includes=#{Formula["brotli"].include}
       --shared-brotli-libpath=#{Formula["brotli"].lib}
       --shared-cares-includes=#{Formula["c-ares"].include}
       --shared-cares-libpath=#{Formula["c-ares"].lib}
+      --shared-libuv-includes=#{Formula["libuv"].include}
+      --shared-libuv-libpath=#{Formula["libuv"].lib}
+      --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
+      --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
+      --shared-nghttp3-includes=#{Formula["libnghttp3"].include}
+      --shared-nghttp3-libpath=#{Formula["libnghttp3"].lib}
+      --shared-ngtcp2-includes=#{Formula["libngtcp2"].include}
+      --shared-ngtcp2-libpath=#{Formula["libngtcp2"].lib}
+      --shared-openssl-includes=#{Formula["openssl@3"].include}
+      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
+      --shared-simdjson-includes=#{Formula["simdjson"].include}
+      --shared-simdjson-libpath=#{Formula["simdjson"].lib}
+      --shared-sqlite-includes=#{Formula["sqlite"].include}
+      --shared-sqlite-libpath=#{Formula["sqlite"].lib}
+      --shared-zstd-includes=#{Formula["zstd"].include}
+      --shared-zstd-libpath=#{Formula["zstd"].lib}
       --openssl-use-def-ca-store
     ]
     args << "--tag=head" if build.head?
+
+    # TODO: Try to devendor these libraries.
+    # - `--shared-ada` needs the `ada-url` formula, but requires C++20
+    # - `--shared-simdutf` seems to result in build failures.
+    # - `--shared-http-parser` and `--shared-uvwasi` are not available as dependencies in Homebrew.
+    ignored_shared_flags = %w[
+      ada
+      http-parser
+      simdutf
+      uvwasi
+    ].map { |library| "--shared-#{library}" }
+
+    configure_help = Utils.safe_popen_read("./configure", "--help")
+    shared_flag_regex = /\[(?<flag>--shared-[^ ]+)\]/
+    configure_help.each_line do |line|
+      matchdata = line.strip.match(shared_flag_regex)
+      next if matchdata.nil?
+
+      flag = matchdata[:flag]
+      next if args.include?(flag) || ignored_shared_flags.include?(flag)
+
+      message = "Unused `--shared-*` flag: #{flag}"
+      if build.head?
+        opoo message
+      else
+        odie message
+      end
+    end
 
     # Enabling LTO errors on Linux with:
     # terminate called after throwing an instance of 'std::out_of_range'
