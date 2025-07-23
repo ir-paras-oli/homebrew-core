@@ -3,19 +3,19 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/c9/d8/1e34f88b472a6b0155fc536cc7f7d3ab24b8fa0d9e13fc30865d2893770c/bittensor_cli-9.8.5.tar.gz"
-  sha256 "c11df70329fd4335081b577e26b6f882f606aa66e726cfdb2e077bcb01cd93c7"
+  url "https://files.pythonhosted.org/packages/ab/ff/74ba30d63d129a2a3453c7a5a9a3f256a5e67cd24cbbb306ca2e8480f440/bittensor_cli-9.8.6.tar.gz"
+  sha256 "c580d629bc9f2632264f018e9a1ecd94e0a14cd7350731d706ef199b9878e209"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "97ebab5a1503249580f886503aad60a3247c2fad263e0cb2a5192d423598e29b"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca17b9a1a592523214cc1a74e3b8a1db8324048fc078c288ded400fccec02ffe"
-    sha256 cellar: :any,                 arm64_ventura: "16a39dd00f71293361488dedd6ebefce2641aef102434edb5e99c3266071c9fe"
-    sha256 cellar: :any,                 sonoma:        "dad073117df095d8595604029f961d7b9caba26a3fbc0c87c9b4f989403b2b94"
-    sha256 cellar: :any,                 ventura:       "dcf92387d0e884d5929b38293e4e8f2d71daf8b87222e21bb86fa0818384b2f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "278940e688980bf8fe37381b9a82e66cd77739eeb9c5e919a6536dc05ac17d9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c515e906d89f1c689a4e6ce1bc39c88c6388f33e1fa46b96e9f360461d285c62"
+    sha256 cellar: :any,                 arm64_sequoia: "f4362ec33a90c8232c2e756a3c12b3080eb8a74a60aff48b290fb0701907976b"
+    sha256 cellar: :any,                 arm64_sonoma:  "94c84277b31fa1896f88ba1c7ebbe14056aa80ce3e1bb67aa158cde55b619e6f"
+    sha256 cellar: :any,                 arm64_ventura: "142ad963a8839a5f557938a5ba210bfd1d17b63151558e3c43d696985c184757"
+    sha256 cellar: :any,                 sonoma:        "5fa17ba4743a8164f61447d29303fe21197f37a8ea33373a6f8fdd6a9391465d"
+    sha256 cellar: :any,                 ventura:       "017a649e40c9fc15f184b0a32a79e482af46cd225d84d2f07cd9906b7760b205"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "332b775eaa8bc50bf9df54d84b7d48c55a3396cf3e0d85f867e7bbb96c6a8a17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2155fa60e5b4928b413f8a6c7ec3b276302f6dd5d079fc72e393e63f8f87904a"
   end
 
   depends_on "rust" => :build # for bittensor-wallet
@@ -132,8 +132,8 @@ class Btcli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/d8/8c/ba6c454ab019d1e24573c68b89a1c4edaad69d4cdf9ed107812802780742/narwhals-1.47.0.tar.gz"
-    sha256 "38238882f3ab2bbc8e7121bc9be951a8a58f1a810bdb14aa2b18792bafac01f8"
+    url "https://files.pythonhosted.org/packages/fc/cd/7395d6c247e821cba6243e9f7ed202fae3fefef643c96581b5ecab927bad/narwhals-1.48.0.tar.gz"
+    sha256 "7243b456cbdb60edb148731a8f9b203f473a373a249ad66c699362508730e63f"
   end
 
   resource "netaddr" do

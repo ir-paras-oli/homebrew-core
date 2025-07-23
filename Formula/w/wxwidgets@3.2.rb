@@ -1,25 +1,24 @@
-class Wxwidgets < Formula
+class WxwidgetsAT32 < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.1/wxWidgets-3.3.1.tar.bz2"
-  sha256 "f936c8d694f9c49a367a376f99c751467150a4ed7cbf8f4723ef19b2d2d9998d"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8.1/wxWidgets-3.2.8.1.tar.bz2"
+  sha256 "ad0cf6c18815dcf1a6a89ad3c3d21a306cd7b5d99a602f77372ef1d92cb7d756"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(3\.2(?:\.\d+)+)$/i)
   end
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "68e7b48517034aee17f6dd2a01e0bc187eb8bb3134eef1a8e21d1aa1588dccc7"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c0ef73e591ab78fd499d70c1c3d2c9c7075235e1d0b58cbdebdce1d9d9e07a3"
-    sha256 cellar: :any,                 arm64_ventura: "cbe903ce43449aab311c9bf986bcffb088ce140b92e9d48aaa27029e25710089"
-    sha256 cellar: :any,                 sonoma:        "2ccc3efe4545d4427d9d05babebec32412b373922b32a4449c7ac1016ea8fbd2"
-    sha256 cellar: :any,                 ventura:       "a75c5640475ea3d3de76bd1a6c94f500bd563424db049572b77b46923a01d14c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbbcc4091bd5549e44971ccd98d3c7b9c331e2b902fb3f4ed63d8045f62a1b73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21d22b573549d66b83d46cc784fcdc3bb092098c0ce12b6c5a5a32700c1beb01"
+    sha256 cellar: :any,                 arm64_sequoia: "c11bad8fce2b1b905e6b9e9dd67738f4576931725e5b15a35efea59f6134cd82"
+    sha256 cellar: :any,                 arm64_sonoma:  "df003b80251db48b7a37f47c36fae426ebdbdaf167709eea66cf77b497a14739"
+    sha256 cellar: :any,                 arm64_ventura: "bef52303b87c67ce3dc08b5f4493f31e0b00137df6f9bacf8bbd952d37ee6915"
+    sha256 cellar: :any,                 sonoma:        "8fc6ebee377f04e35bf3f31b1c03fe7560d5044ad600e85a1250a3c293c5b67a"
+    sha256 cellar: :any,                 ventura:       "e9c85776e9917d705f8cd0d6eae928baca1afcf9c603b9b8ab5ce1dd049952c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "010072339b9063e6a92be9001c330606dfe520e9671a7c9f4dba0582532241b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be9ecb99906f780193393b15622fb1fe5d13b941dbbfe4676d0a8a7750d9957a"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +26,6 @@ class Wxwidgets < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "pcre2"
-  depends_on "webp"
 
   uses_from_macos "expat"
   uses_from_macos "zlib"
@@ -51,7 +49,7 @@ class Wxwidgets < Formula
 
   def install
     # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
-    %w[catch pcre libwebp].each { |l| rm_r(buildpath/"3rdparty"/l) }
+    %w[catch pcre].each { |l| rm_r(buildpath/"3rdparty"/l) }
     %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath/"src"/l) }
 
     args = [
@@ -61,13 +59,14 @@ class Wxwidgets < Formula
       "--enable-display",
       "--enable-dnd",
       "--enable-graphics_ctx",
+      "--enable-std_string",
       "--enable-svg",
+      "--enable-unicode",
       "--enable-webviewwebkit",
       "--with-expat",
       "--with-libjpeg",
       "--with-libpng",
       "--with-libtiff",
-      "--with-libwebp",
       "--with-opengl",
       "--with-zlib",
       "--disable-tests",
@@ -92,12 +91,20 @@ class Wxwidgets < Formula
     # which are linked to the same place
     inreplace bin/"wx-config", prefix, HOMEBREW_PREFIX
 
-    # For consistency with the versioned wxwidgets formulae
-    bin.install_symlink bin/"wx-config" => "wx-config-#{version.major_minor}"
+    # Move some files out of the way to prevent conflict with `wxwidgets`
+    (bin/"wxrc").unlink
+    bin.install bin/"wx-config" => "wx-config-#{version.major_minor}"
     (share/"wx"/version.major_minor).install share/"aclocal", share/"bakefile"
   end
 
+  def caveats
+    <<~EOS
+      To avoid conflicts with the wxwidgets formula, `wx-config` and `wxrc`
+      have been installed as `wx-config-#{version.major_minor}` and `wxrc-#{version.major_minor}`.
+    EOS
+  end
+
   test do
-    system bin/"wx-config", "--libs"
+    system bin/"wx-config-#{version.major_minor}", "--libs"
   end
 end

@@ -38,9 +38,10 @@ module Homebrew
 
         files = response.fetch("files")
         files.reject! do |file|
-          filename = file.fetch("filename")
+          next true if file.fetch("status") == "removed"
 
-          !filename.start_with?("Formula") || !filename.end_with?(".rb")
+          filename = file.fetch("filename")
+          !filename.start_with?("Formula/") || !filename.end_with?(".rb")
         end
 
         files.any? { |file| patch_modifies_bottle_block?(file.fetch("patch")) }
