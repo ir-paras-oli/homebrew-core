@@ -19,6 +19,7 @@ class Koka < Formula
     sha256               arm64_ventura: "aed65125db396062d0e25a4f612d89bc02b46d9d61950d458282900384f5ef1e"
     sha256 cellar: :any, sonoma:        "75f8a3a7d09b70e31aaa7b299f6c9709f2130d72d80ef217e933ee9e628b460c"
     sha256 cellar: :any, ventura:       "de168feec52ce04ecd56049b4ef10f9911aa46c64f8d533d9e74c564c76a8c3d"
+    sha256               arm64_linux:   "2e53a1cfb65f0d5cc89c8000195e769daf8ce935839caffc9cb9f4e923a6ab45"
     sha256               x86_64_linux:  "ed3665df8c182f4b9268319879a21d49cbf4853bc2cb8d3171397a5f3ddba412"
   end
 

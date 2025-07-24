@@ -6,8 +6,6 @@ class GithubRelease < Formula
   license "MIT"
   head "https://github.com/github-release/github-release.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "783735e7a1d5f4bc00ebfb61e97c31b815af39718562f6efd8b3aa228600e2b0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "783735e7a1d5f4bc00ebfb61e97c31b815af39718562f6efd8b3aa228600e2b0"
@@ -27,6 +25,7 @@ class GithubRelease < Formula
     assert_match "github-release v#{version}", shell_output("#{bin}/github-release --version")
 
     system bin/"github-release", "info", "--user", "github-release",
-                                            "--repo", "github-release"
+                                         "--repo", "github-release",
+                                         "--tag",  "v#{version}"
   end
 end

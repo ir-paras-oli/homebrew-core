@@ -11,6 +11,7 @@ class Wait4x < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "605957867f49289476e840e6232f38878a1cc428cd64c7722af29b9a814e503b"
     sha256 cellar: :any_skip_relocation, sonoma:        "c3c99e3882d0e538fc54b2480bda348bfdaf3b819e8be5176d3f8c0d79b7715e"
     sha256 cellar: :any_skip_relocation, ventura:       "17794d3a852d8e2ff42afd5209919ed007d708a81645f4587ff206ac59bf6776"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d71f9b7472396144ce818057aa2fda199b3971c1134b53245fed82996f03bfa9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea2674b1e0a8f119d50e3c773096bff4136e253930829642e1371eca32328e22"
   end
 
