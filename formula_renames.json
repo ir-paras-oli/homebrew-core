@@ -37,6 +37,7 @@
   "fcct": "butane",
   "ffmpeg28": "ffmpeg@2.8",
   "findbugs": "spotbugs",
+  "genai-toolbox": "mcp-toolbox",
   "geode": "apache-geode",
   "geth": "ethereum",
   "gitlab-ci-multi-runner": "gitlab-runner",
