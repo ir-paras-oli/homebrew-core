@@ -381,8 +381,8 @@
     "exclude_packages": ["certifi"]
   },
   "glances": {
-    "package_name": "glances[all]",
-    "exclude_packages": ["certifi", "cryptography", "psycopg-binary"]
+    "package_name": "glances[containers,web]",
+    "exclude_packages": ["certifi"]
   },
   "gnuradio": {
     "package_name": "",
