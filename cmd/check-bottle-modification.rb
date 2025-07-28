@@ -38,7 +38,7 @@ module Homebrew
 
         files = response.fetch("files")
         files.reject! do |file|
-          next true if file.fetch("status") == "removed"
+          next true if %w[renamed removed].include?(file.fetch("status"))
 
           filename = file.fetch("filename")
           !filename.start_with?("Formula/") || !filename.end_with?(".rb")
