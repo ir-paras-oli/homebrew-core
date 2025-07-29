@@ -12,6 +12,7 @@ class CargoClone < Formula
     sha256 cellar: :any,                 arm64_ventura: "59a6cb1abb30e784f1725baae6dec12ab0e70dfe55feb9a5102e6aa771d08e1b"
     sha256 cellar: :any,                 sonoma:        "63fba34768f4c2a2c0d4ccc9dad2aa04932d6245028fc0fc5c59b0e3f9289c8f"
     sha256 cellar: :any,                 ventura:       "72052760b11c391fc5ad31c4bd8d3b3e05c2ab29e56802d6972942d909e72f20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29cfd15121f91f34191bc8769ccc3dd927f153b6112d529557be54095909db05"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9fbc19a7007107a7c769ba8d8bc06dbe960fc7e38d9ac2096b99f8cf8e58489"
   end
 
