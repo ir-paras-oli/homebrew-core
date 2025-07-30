@@ -11,6 +11,7 @@ class Varlock < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "506af2149a89685fb58e28c2f5e2d41effd22feb0fc0a71e734335d2b1b076c8"
     sha256 cellar: :any_skip_relocation, sonoma:        "1ee7363477cfd62b8dc2304ec235c78d6caeadad323f8ece939f91a8aa608b6c"
     sha256 cellar: :any_skip_relocation, ventura:       "1ee7363477cfd62b8dc2304ec235c78d6caeadad323f8ece939f91a8aa608b6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "506af2149a89685fb58e28c2f5e2d41effd22feb0fc0a71e734335d2b1b076c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "506af2149a89685fb58e28c2f5e2d41effd22feb0fc0a71e734335d2b1b076c8"
   end
 

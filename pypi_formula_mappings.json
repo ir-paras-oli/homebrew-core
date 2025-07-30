@@ -635,7 +635,8 @@
     "exclude_packages": ["certifi", "cryptography"]
   },
   "organize-tool": {
-    "exclude_packages": ["cryptography"]
+    "exclude_packages": ["cryptography"],
+    "extra_packages": ["pyobjc-framework-cocoa"]
   },
   "osc": {
     "package_name": "",
