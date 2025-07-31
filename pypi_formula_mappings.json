@@ -94,6 +94,9 @@
   "b2-tools": {
     "exclude_packages": ["certifi"]
   },
+  "b4" :{
+    "exclude_packages": ["certifi", "cffi"]
+  },
   "badkeys": {
     "exclude_packages": ["cryptography"]
   },
@@ -231,6 +234,10 @@
   },
   "cookiecutter": {
     "exclude_packages": ["certifi"]
+  },
+  "copyparty": {
+    "package_name": "copyparty[thumbnails2,audiotags,ftpd,ftps,tftpd,pwhash,zeromq]",
+    "exclude_packages": ["cffi", "cryptography", "pycparser"]
   },
   "core-lightning": {
     "package_name": "",
@@ -520,6 +527,10 @@
   },
   "linode-cli": {
     "exclude_packages": ["certifi"]
+  },
+  "litani": {
+    "package_name": "",
+    "extra_packages": ["jinja2", "markupsafe", "pyyaml"]
   },
   "litecli": {
     "exclude_packages": ["setuptools"]
