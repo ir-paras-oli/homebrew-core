@@ -1,33 +1,33 @@
-class GradleAT7 < Formula
+class GradleAT8 < Formula
   desc "Open-source build automation tool based on the Groovy and Kotlin DSL"
   homepage "https://www.gradle.org/"
-  url "https://services.gradle.org/distributions/gradle-7.6.6-all.zip"
-  sha256 "6ed4d467349e2d3f555a578829c4aeadd67d73e2ec5d213c2a62f8f2829d9fa9"
+  url "https://services.gradle.org/distributions/gradle-8.14.3-all.zip"
+  sha256 "ed1a8d686605fd7c23bdf62c7fc7add1c5b23b2bbc3721e661934ef4a4911d7c"
   license "Apache-2.0"
 
   livecheck do
     url "https://gradle.org/releases/"
-    regex(/href=.*?gradle[._-]v?(7(?:\.\d+)+)-all\.(?:zip|t)/i)
+    regex(/href=.*?gradle[._-]v?(8(?:\.\d+)+)-all\.(?:zip|t)/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d65eb2a55c0be7b144b661bea1d9f3df08d67eb0aa7a033c3088a58272b7b2db"
+    sha256 cellar: :any_skip_relocation, all: "f1eae3a15f69a395246d590a2affefb1c30b1bca61f00996490ca76ce8965eb1"
   end
 
   keg_only :versioned_formula
 
-  # EOL with Gradle 9 release on 2025-07-31.
-  # https://docs.gradle.org/current/userguide/feature_lifecycle.html#eol_support
-  deprecate! date: "2025-07-31", because: :unmaintained
-
-  # TODO: Check if support for running on Java 20 is backported to Gradle 7.x.
-  depends_on "openjdk@17"
+  # https://github.com/gradle/gradle/blob/master/platforms/documentation/docs/src/docs/userguide/releases/compatibility.adoc
+  depends_on "openjdk"
 
   def install
     rm(Dir["bin/*.bat"])
     libexec.install %w[bin docs lib src]
-    env = Language::Java.overridable_java_home_env("17")
+    env = Language::Java.overridable_java_home_env
     (bin/"gradle").write_env_script libexec/"bin/gradle", env
+
+    # Ensure we have uniform bottles.
+    inreplace libexec/"src/jvm-services/org/gradle/jvm/toolchain/internal/LinuxInstallationSupplier.java",
+              "/usr/local", HOMEBREW_PREFIX
   end
 
   test do
