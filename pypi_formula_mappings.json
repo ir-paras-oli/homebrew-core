@@ -566,6 +566,9 @@
   "mathlibtools": {
     "exclude_packages": ["certifi", "cryptography"]
   },
+  "mcp-proxy": {
+    "exclude_packages": ["certifi"]
+  },
   "mcpm": {
     "exclude_packages": ["certifi", "cryptography"]
   },
