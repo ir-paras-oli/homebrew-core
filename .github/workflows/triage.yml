@@ -361,6 +361,7 @@ jobs:
                 numpy|\
                 openblas|\
                 openjpeg|\
+                openssl@3|\
                 p11-kit|\
                 pango|\
                 pcre2|\
@@ -422,6 +423,7 @@ jobs:
                 libcap|\
                 libva|\
                 libxml2|\
+                openssl@3|\
                 python@3.13|\
                 wayland-protocols|\
                 zlib|\

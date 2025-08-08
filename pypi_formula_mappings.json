@@ -714,6 +714,9 @@
   "prowler": {
     "exclude_packages": ["certifi", "cryptography", "numpy"]
   },
+  "pulp-cli": {
+    "exclude_packages": ["certifi"]
+  },
   "pwntools": {
     "exclude_packages": ["capstone", "certifi", "cryptography"]
   },
