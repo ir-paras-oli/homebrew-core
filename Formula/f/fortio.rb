@@ -2,8 +2,8 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https://fortio.org/"
   url "https://github.com/fortio/fortio.git",
-      tag:      "v1.70.0",
-      revision: "ce236e81d8c104b69266f00f0adf7867116cea64"
+      tag:      "v1.71.0",
+      revision: "5c5f287c1df641999fbf1cfb7db583f49ed3b626"
   license "Apache-2.0"
   head "https://github.com/fortio/fortio.git", branch: "master"
 
@@ -16,13 +16,13 @@ class Fortio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8f7a64a338be45c91b18965388d8821989e238e66652e430c8531acef15405e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8f7a64a338be45c91b18965388d8821989e238e66652e430c8531acef15405e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8f7a64a338be45c91b18965388d8821989e238e66652e430c8531acef15405e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8286ab681411faf7cdedfd5b640650459a9a7465f001978bcf4e131afc107e9a"
-    sha256 cellar: :any_skip_relocation, ventura:       "8286ab681411faf7cdedfd5b640650459a9a7465f001978bcf4e131afc107e9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a42ab0f0283490a5d66939bfbcf0e7537ecdc43d4427fc7be22d64f026d3b81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "064b7d674d8ab2b08412222fc44d9941c6fd1abbb24f16d53bf739ea433511e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de93819b8da6457c43c04ae00f7ce4fc18edc9d423762633171967bb4bf2719f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de93819b8da6457c43c04ae00f7ce4fc18edc9d423762633171967bb4bf2719f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "de93819b8da6457c43c04ae00f7ce4fc18edc9d423762633171967bb4bf2719f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5bb7aa93a11b767d0516ad916773ced688b2a9871ad5c6f3993909d555c93db"
+    sha256 cellar: :any_skip_relocation, ventura:       "a5bb7aa93a11b767d0516ad916773ced688b2a9871ad5c6f3993909d555c93db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86dd838c219690fc1e5138c11c02a64c8798ffb7e4f58e7cf4a462dc21a17f28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b155dfcbf6ea8309c3e28508a4ad1cc4cd960e11acc93dd723a4622e44f33370"
   end
 
   depends_on "go" => :build

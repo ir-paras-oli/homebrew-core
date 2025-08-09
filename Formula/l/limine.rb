@@ -5,6 +5,11 @@ class Limine < Formula
   sha256 "715f9b2d507cc06553e2127e5a45da41034bcd66a86663176b5a993da1990271"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 arm64_sequoia: "144a329e3cd4d0e04515411cfe951676061f8acc078ac154036dceea9419ccf2"
     sha256 arm64_sonoma:  "6edbf2f5f65a78498db4c7b8bf6b292e852c12979dcb6dba5e9a891249041bf9"

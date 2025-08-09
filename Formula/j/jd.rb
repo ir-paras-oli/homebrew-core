@@ -1,19 +1,18 @@
 class Jd < Formula
   desc "JSON diff and patch"
   homepage "https://github.com/josephburnett/jd"
-  url "https://github.com/josephburnett/jd/archive/refs/tags/v2.2.3.tar.gz"
-  sha256 "eb15f4eef5d418ef002c388f1c30b5802cea3f30609185ce4d12ef05e5148711"
+  url "https://github.com/josephburnett/jd/archive/refs/tags/v2.2.4.tar.gz"
+  sha256 "3afa5f0b38efd9eb36154c7a75f5731ee66f3c7a1f580b236eabccb65cb47352"
   license "MIT"
   head "https://github.com/josephburnett/jd.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3da935978b2656b746d702e3fb024c6e317708eab643319fe0dcb18f59445972"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3da935978b2656b746d702e3fb024c6e317708eab643319fe0dcb18f59445972"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3da935978b2656b746d702e3fb024c6e317708eab643319fe0dcb18f59445972"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a8155352942e2e58c176d2f90027a98d2d995e7b185303a8dfb52f6b0e4da26"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a8155352942e2e58c176d2f90027a98d2d995e7b185303a8dfb52f6b0e4da26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9536cec9c0feddf8147504272ce24a723402521666271e28161508fe44ec8db9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3cf382ecb26b9288dedab8eb85c1464f891c81f8f90cc1f22f96b5cd6774f7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3cf382ecb26b9288dedab8eb85c1464f891c81f8f90cc1f22f96b5cd6774f7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3cf382ecb26b9288dedab8eb85c1464f891c81f8f90cc1f22f96b5cd6774f7b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c85651e38649266b6b2f7226301f614b67b34603b607d0d71fdfa74507d8a78b"
+    sha256 cellar: :any_skip_relocation, ventura:       "c85651e38649266b6b2f7226301f614b67b34603b607d0d71fdfa74507d8a78b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8300e45ccd04f69d153ef2f0a5c1482ff2f7c03a7507b78dbbf2a08a049d673"
   end
 
   depends_on "go" => :build
